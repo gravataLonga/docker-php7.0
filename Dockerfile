@@ -10,7 +10,7 @@ RUN sed -i 's/http:\/\//http:\/\/pt./g' /etc/apt/sources.list
 RUN apt-get update && apt-get -y upgrade && apt-get -y dist-upgrade
 
 # PHP Installation
-RUN apt-get -y install php7.0 php7.0-fpm php7.0-xml php7.0-gd php7.0-json php7.0-mbstring php7.0-soap php7.0-zip php7.0-opcache php7.0-mcrypt php7.0-curl php7.0-pgsql php7.0-mysql php7.0-intl php-xdebug php-redis
+RUN apt-get -y install php7.0 php7.0-fpm php7.0-xml php7.0-gd php7.0-json php7.0-mbstring php7.0-soap php7.0-zip php7.0-opcache php7.0-mcrypt php7.0-curl php7.0-pgsql php7.0-mysql php7.0-intl php-xdebug php-redis php7.0-intl
 
 # Overidden configuration files
 COPY conf /
