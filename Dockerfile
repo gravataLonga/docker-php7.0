@@ -23,7 +23,7 @@ RUN php -r "readfile('https://blackfire.io/api/v1/releases/probe/php/linux/amd64
 # TODO A better solution is required because machines may have multiple users
 # This isn't true because docker. :)
 RUN useradd application
-WORKDIR /opt/application
+WORKDIR /var/www
 
 EXPOSE 9000
 ENTRYPOINT ["php-fpm7.0", "--nodaemonize"]
