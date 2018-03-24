@@ -26,4 +26,4 @@ RUN useradd application
 WORKDIR /var/www
 
 EXPOSE 9000
-ENTRYPOINT ["php-fpm7.0", "--nodaemonize"]
+ENTRYPOINT ["php-fpm7.1", "--nodaemonize"]
