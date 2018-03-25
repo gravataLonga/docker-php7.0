@@ -21,11 +21,8 @@ COPY conf /
 RUN echo $TIMEZONE_ENV > /etc/timezone
 RUN echo "date.timezone=$TIMEZONE_ENV" > /etc/php/7.1/cli/conf.d/timezone.ini
 
-COPY start.sh /start.sh
-RUN chmod +x /start.sh
-
 RUN useradd application
 WORKDIR /var/www
 
-CMD ["/start.sh"]
 EXPOSE 9000
+ENTRYPOINT ["php-fpm7.1", "--nodaemonize"]
