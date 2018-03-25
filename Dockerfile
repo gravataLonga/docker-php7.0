@@ -17,7 +17,7 @@ COPY conf /
 
 # Install Blackfire
 # It creates some configuration files for PHP
-RUN php -r "readfile('https://blackfire.io/api/v1/releases/probe/php/linux/amd64/70');" > /tmp/blackfire-probe.tar.gz && tar zxpf /tmp/blackfire-probe.tar.gz -C /tmp && mv /tmp/blackfire-*.so $(php -r "echo ini_get('extension_dir');")/blackfire.so && printf "extension=blackfire.so\nblackfire.agent_socket=tcp://blackfire:8707\n" > /etc/php/7.0/mods-available/blackfire.ini && phpenmod blackfire
+# RUN php -r "readfile('https://blackfire.io/api/v1/releases/probe/php/linux/amd64/70');" > /tmp/blackfire-probe.tar.gz && tar zxpf /tmp/blackfire-probe.tar.gz -C /tmp && mv /tmp/blackfire-*.so $(php -r "echo ini_get('extension_dir');")/blackfire.so && printf "extension=blackfire.so\nblackfire.agent_socket=tcp://blackfire:8707\n" > /etc/php/7.0/mods-available/blackfire.ini && phpenmod blackfire
 
 # Create a user to match the GUID of our user
 # TODO A better solution is required because machines may have multiple users
